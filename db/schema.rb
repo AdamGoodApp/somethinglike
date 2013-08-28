@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828153525) do
+ActiveRecord::Schema.define(:version => 20130828155211) do
 
   create_table "movies", :force => true do |t|
     t.text     "cast_member_ids"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130828153525) do
     t.text     "trailer_url"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.text     "title"
   end
 
 end
