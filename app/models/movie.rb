@@ -10,6 +10,8 @@ class Movie < ActiveRecord::Base
   validates :rating, presence: true
   validates :release_date, presence: true
   validates :tagline, presence: true
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
+
+  
 
 end
