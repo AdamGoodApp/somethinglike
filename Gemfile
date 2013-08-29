@@ -17,6 +17,7 @@ gem 'acts_as_list'
 gem 'themoviedb'
 gem 'imdb'
 gem 'rottentomatoes'
+gem 'yaml_db'
 
 
 # Gems used only for assets and not required

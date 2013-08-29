@@ -17,7 +17,7 @@ class Movie < ActiveRecord::Base
 
 
   # before_validation(on: :create) do
-  #   binding.pry
+
   #     [:cast_member_id, :cast_members].each do |field|
   #       send(field) = 'sorry' if send(field).blank?
   #     end
