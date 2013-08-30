@@ -18,6 +18,7 @@ gem 'themoviedb'
 gem 'imdb'
 gem 'rottentomatoes'
 gem 'yaml_db'
+gem 'ransack'
 
 
 # Gems used only for assets and not required

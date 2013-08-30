@@ -1,15 +1,29 @@
 
-<div>
-	<h1>Search for a movie</h1>
-	<%= form_tag("/movies", :method => "get") do %>
-  <%= text_field_tag(:query, nil, :class => "input-xlarge searchInput") %>
-  <button>Submit</button>
-	<% end %>
-</div>
+<%= search_form_for @q do |f| %>
+  <p>
+    <%= f.label :title_cont %>
+    <%= f.text_field :title_cont %>
+  </p>
+    <p>
+    <%= f.label :title_start %>
+    <%= f.text_field :title_start %>
+  </p>
+  <p>
+    <%= f.label :director_start %>
+    <%= f.text_field :director_start %>
+  </p>
+    <p>
+    <%= f.label :director_cont %>
+    <%= f.text_field :director_cont %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 
-<% @movies[0..5000].each do |m| %>	
+
+<% @result.each do |m| %>	
 	<h1><%= m.title %></h1>
 	<p><%= m.director %></p>
-	<p><%= m.cast_members %></p>
-	<% end %>
+<% end %>
