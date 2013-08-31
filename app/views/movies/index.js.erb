@@ -1,0 +1,8 @@
+var movieList = $("#movies"),
+		movies = "";
+
+<% @result.each do |movie| %>
+	movies += "<li> <%= movie.title %> </li>";
+<% end %>
+
+movieList.empty().append(movies);

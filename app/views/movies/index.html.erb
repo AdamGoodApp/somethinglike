@@ -1,5 +1,5 @@
 
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, :remote => true, id: :search_form do |f| %>
   <p>
     <%= f.label :title_cont %>
     <%= f.text_field :title_cont %>
@@ -22,8 +22,9 @@
 <% end %>
 
 
+<div id="result">
+	
+	<ul id="movies">
 
-<% @result.each do |m| %>	
-	<h1><%= m.title %></h1>
-	<p><%= m.director %></p>
-<% end %>
+	</ul>
+</div>
