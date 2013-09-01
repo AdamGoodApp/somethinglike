@@ -2,7 +2,7 @@ var movieList = $("#movies"),
 		movies = "";
 
 <% @result.each do |movie| %>
-	movies += "<li> <%= movie.title %> </li>";
+	movies += "<img src=<%= movie.poster %> > <p><%= movie.title %></p> ";
 <% end %>
 
 movieList.empty().append(movies);
