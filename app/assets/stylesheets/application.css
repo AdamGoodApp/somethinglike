@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	background-color: #6348B5;
+}
+
+
+img {
+	height: 280px;
+	width: 200px;
+}
+
+#movies {
+
+	/*background-color: #6348B5;*/
+	background-color: #FDD66B;
+}

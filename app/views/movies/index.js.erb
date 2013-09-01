@@ -1,8 +1,9 @@
 var movieList = $("#movies"),
 		movies = "";
 
+
 <% @result.each do |movie| %>
-	movies += "<img src=<%= movie.poster %> > <p><%= movie.title %></p> ";
+	movies += "<div class='viewport'><a><p><%= movie.title %></p><img src=<%= movie.poster %>></a></div> ";
 <% end %>
 
 movieList.empty().append(movies);
