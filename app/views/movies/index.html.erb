@@ -1,27 +1,22 @@
-
-<%= search_form_for @q, :remote => true, id: :search_form, :class => "form-wrapper cf" do |f| %>
-
-    <%= f.text_field :title_cont, :placeholder => "Title Contains" %>
-    <button type="submit">Title</button>
-    <%= f.text_field :title_start, :placeholder => "Title Starts With" %>
-    <button type="submit">Title</button>
-    <%= f.text_field :director_cont, :placeholder => "Director Contains" %>
-    <button type="submit">Director</button>
-    <%= f.text_field :cast_members_cont, :placeholder => "Cast Contains" %>
-    <button type="submit">Cast</button>
-    <%= f.text_field :release_date_cont, :placeholder => "Release Year Contains" %>
-    <button type="submit">Year</button>
-<% end %>
-
-
-
-
-<div class="viewport" >
-    <a>
-        <span class="dark-background">HELLO ADAM</span>
-        <img src="http://cdn.arstechnica.net/wp-content/uploads/2012/10/06_Place_20773_1_Mis.jpg" alt="Northern Saw-Whet Owl" />
-    </a>
+<div class="main">
+    <div class ="welcome_text">
+        <h1>SOMETHING LIKE</h1>
+    </div>
 </div>
+
+    <%= search_form_for @q, :remote => true, id: :search_form, :class => "form-wrapper cf" do |f| %>
+        <%= f.text_field :title_cont, :placeholder => "Title Contains" %>
+        <button type="submit">Title</button>
+        <%= f.text_field :title_start, :placeholder => "Title Starts With" %>
+        <button type="submit">Title</button>
+        <%= f.text_field :director_cont, :placeholder => "Director Contains" %>
+        <button type="submit">Director</button>
+        <%= f.text_field :cast_members_cont, :placeholder => "Cast Contains" %>
+        <button type="submit">Cast</button>
+        <%= f.text_field :release_date_cont, :placeholder => "Release Year Contains" %>
+        <button type="submit">Year</button>
+    <% end %>
+
 
  
 	<div id="movies" >

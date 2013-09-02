@@ -32,7 +32,7 @@ namespace :imdb do
   	a = Tmdb::Movie.now_playing
   	
  			a.each do |letter|
-  		Imdb::Search.new(letter["title"]).movies[0..5].collect do |movies|
+  		Imdb::Search.new(letter["title"]).movies[0..2].collect do |movies|
 
         castid = movies.cast_member_ids.join(', ')
         castmember = movies.cast_members.join(', ')
