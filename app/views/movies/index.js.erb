@@ -5,7 +5,7 @@ var movieList = $("#movies"),
 <% @result.each do |movie| %>
 	movies += "<div class='viewport'>" +
 	"<a>" +
-	"<span class='dark-background'><%= movie.title %></span>" +
+	"<span class='dark-background'><%= movie.title %><%= movie.rating %></span>" +
 	"<img src=<%= movie.poster %>></a>" +
 	"</div> ";
 <% end %>
