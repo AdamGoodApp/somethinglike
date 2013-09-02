@@ -16,17 +16,12 @@ body {
 	background-color: #6348B5;
 }
 
-img {
-	/*height: 280px;
-	width: 200px;*/
-}
-
 h1 {
 	color: white;
 	margin-top: 0px;
 }
 
-.main {
+.welcome {
 	background-image:url('test.jpg');
 	background-repeat:no-repeat;
 	background-size: 100% 100%;
