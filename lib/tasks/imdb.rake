@@ -1,15 +1,25 @@
+require 'pry'
+
+
 namespace :imdb do
   desc "Pulling in data from imdb into movie model"
   task :pull => :environment do
 
 
-  	letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
-
+  	letters = ("a".."z").to_a
+   
   	letters.each do |letter|
   		Imdb::Search.new(letter).movies.each do |movies|
 
-  			Movie.create(:cast_member_ids => movies.cast_member_ids, :cast_members => movies.cast_members, :director => movies.director, :genres => movies.genres, :length => movies.length, :plot => movies.plot, :rating => movies.rating, :release_date => movies.release_date, :tagline => movies.tagline, :trailer_url => movies.trailer_url, :title => movies.title, :poster => movies.poster)  		
+        castid = movies.cast_member_ids.join(', ')
+        castmember = movies.cast_members.join(', ')
+        agenres = movies.genres.join(', ')
+        adirector = movies.director.join(', ')
+
+      
+
+
+  			Movie.create(:cast_member_ids => castid, :cast_members => castmember, :director => adirector, :genres => agenres, :length => movies.length, :plot => movies.plot, :rating => movies.rating, :release_date => movies.release_date, :tagline => movies.tagline, :trailer_url => movies.trailer_url, :title => movies.title, :poster => movies.poster)  		
   		end
   	end
   end
@@ -22,9 +32,14 @@ namespace :imdb do
   	a = Tmdb::Movie.now_playing
   	
  			a.each do |letter|
-  		Imdb::Search.new(letter["title"]).movies.each do |movies|
+  		Imdb::Search.new(letter["title"]).movies[0..5].collect do |movies|
 
-  			Movie.create(:cast_member_ids => movies.cast_member_ids, :cast_members => movies.cast_members, :director => movies.director, :genres => movies.genres, :length => movies.length, :plot => movies.plot, :rating => movies.rating, :release_date => movies.release_date, :tagline => movies.tagline, :trailer_url => movies.trailer_url, :title => movies.title, :poster => movies.poster)  		
+        castid = movies.cast_member_ids.join(', ')
+        castmember = movies.cast_members.join(', ')
+        agenres = movies.genres.join(', ')
+        adirector = movies.director.join(', ')
+
+  			Movie.create(:cast_member_ids => castid, :cast_members => castmember, :director => adirector, :genres => agenres, :length => movies.length, :plot => movies.plot, :rating => movies.rating, :release_date => movies.release_date, :tagline => movies.tagline, :trailer_url => movies.trailer_url, :title => movies.title, :poster => movies.poster)  		
   		end
   	end
   end
