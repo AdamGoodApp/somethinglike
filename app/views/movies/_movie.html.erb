@@ -1,11 +1,14 @@
 <div class="viewport">
-	<a class="modal_button" data-title="<%= "#{movie.title}" %>">
+	<a href="/movies/id/">
 		<span class="dark-background">
 			<%= movie.title %>
 			<%= movie.rating %>
+
 		</span>
+    <%= link_to movie.title, movie_path(movie.id)%>
 		<img src="<%= movie.poster %>">
 	</a>
+  
 </div>
 
 

@@ -3,6 +3,8 @@ SomethingLike::Application.routes.draw do
   get "movies/index"
   match 'movies' => "movies#index"
 
+  resources :movies
+
   root :to => 'movies#index'
 
 
