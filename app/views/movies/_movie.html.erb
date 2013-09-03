@@ -1,11 +1,9 @@
 <div class="viewport">
-	<a href="/movies/id/">
+	<a href="/movies/<%= movie.id %>">
 		<span class="dark-background">
 			<%= movie.title %>
 			<%= movie.rating %>
-
 		</span>
-    <%= link_to movie.title, movie_path(movie.id)%>
 		<img src="<%= movie.poster %>">
 	</a>
   
