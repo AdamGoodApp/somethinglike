@@ -16,7 +16,7 @@ body {
 	background-color: #6348B5;
 }
 
-h1 {
+h1, h2 {
 	color: white;
 	margin-top: 0px;
 }
@@ -28,8 +28,11 @@ h1 {
 	height: 43em;
 }
 
-#movies {
-
-	/*background-color: #6348B5;*/
-	background-color: #FDD66B;
+.search {
+	padding-top: 6%;
 }
+
+#movies {
+	
+}
+
