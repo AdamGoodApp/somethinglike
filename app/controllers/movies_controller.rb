@@ -4,19 +4,16 @@ class MoviesController < ApplicationController
 
 	def index
 
-
   	@q = Movie.search(params[:q])
 
   	if params[:q]
-			@result = @q.result(:distinct => true)
+			@movies = @q.result(:distinct => true).page(params[:page])
 		else
-			@result = {}
+			@movies = Movie.order(:created_at).page(params[:page])
 		end
 
+		@movie_count = Movie.count
 
-
-
-		@movies = Movie.all
 
     # respond_to do |format|
     #   format.html # index.html.erb

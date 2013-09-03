@@ -20,6 +20,8 @@ gem 'rottentomatoes'
 gem 'yaml_db'
 gem 'ransack'
 gem "lazyload-rails"
+gem 'will_paginate', '~> 3.0'
+gem 'kaminari'
 
 
 # Gems used only for assets and not required

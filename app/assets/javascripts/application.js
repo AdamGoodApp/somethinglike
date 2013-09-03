@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.lazyload
+//= require jquery.infinitescroll.js
 //= require_tree .
 
 $(function(){
@@ -20,6 +21,24 @@ $(function(){
 		$(this).submit();	
   });
 
-  $("img").lazyload();
+	$("#movies .viewport").on("mouseenter", function() {
+		$(this).children('a').children('img').animate({
+			height: '380',
+			left: '0', 
+			top: '0', 
+			width: '300'
+		}, 100);
+		$(this).children('a').children('span').fadeIn(200);
+	}).on("mouseleave", function() {
+		$(this).children('a').children('img').animate({
+			height: '480',
+			left: '-20',
+			top: '-20',
+			width: '400'
+		}, 100);
+		$(this).children('a').children('span').fadeOut(200);
+	});
+
+  // $("img").lazyload();
 
 });

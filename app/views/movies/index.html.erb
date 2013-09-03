@@ -1,27 +1,25 @@
 <div class="welcome">
-    <div class ="welcome_text">
-        <h1>SOMETHING LIKE</h1>
-        <h1><%= @movies.count %> Movies and counting</h1>
-    </div>
+  <div class ="welcome_text">
+    <h1>SOMETHING LIKE</h1>
+    <h2><%= @movie_count %> Movies and counting</h2>
+  </div>
 </div>
 
-    <%= search_form_for @q, :remote => true, id: :search_form, :class => "form-wrapper cf" do |f| %>
-        <%= f.text_field :title_cont, :placeholder => "Title Contains" %>
-        <button type="submit">Title</button>
-        <%= f.text_field :title_start, :placeholder => "Title Starts With" %>
-        <button type="submit">Title</button>
-        <%= f.text_field :director_cont, :placeholder => "Director Contains" %>
-        <button type="submit">Director</button>
-        <%= f.text_field :cast_members_cont, :placeholder => "Cast Contains" %>
-        <button type="submit">Cast</button>
-        <%= f.text_field :release_date_cont, :placeholder => "Release Year Contains" %>
-        <button type="submit">Year</button>
-    <% end %>
+<%= search_form_for @q, :remote => true, id: :search_form, :class => "form-wrapper cf" do |f| %>
+  <%= f.text_field :title_cont, :placeholder => "Title Contains" %>
+  <button type="submit">Title</button>
+  <%= f.text_field :title_start, :placeholder => "Title Starts With" %>
+  <button type="submit">Title</button>
+  <%= f.text_field :director_cont, :placeholder => "Director Contains" %>
+  <button type="submit">Director</button>
+  <%= f.text_field :cast_members_cont, :placeholder => "Cast Contains" %>
+  <button type="submit">Cast</button>
+  <%= f.text_field :release_date_cont, :placeholder => "Release Year Contains" %>
+  <button type="submit">Year</button>
+<% end %>
 
-
- 
-	<div id="movies" >
-
-	</div>
-
+<div id="movies">
+  <%= render @movies %>
+  <%= paginate @movies %>
+</div>
 
