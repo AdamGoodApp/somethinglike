@@ -12,11 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.lazyload
 //= require_tree .
 
 $(function(){
   $("#search_form").on("keyup", function() {
 		$(this).submit();	
   });
+
+  $("img").lazyload();
 
 });

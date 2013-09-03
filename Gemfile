@@ -19,6 +19,7 @@ gem 'imdb'
 gem 'rottentomatoes'
 gem 'yaml_db'
 gem 'ransack'
+gem "lazyload-rails"
 
 
 # Gems used only for assets and not required
