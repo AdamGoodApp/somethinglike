@@ -7,9 +7,9 @@ class MoviesController < ApplicationController
   	@q = Movie.search(params[:q])
 
   	if params[:q]
-			@movies = @q.result(:distinct => true).page(params[:page])
+			@movies = @q.result(:distinct => true).page(params[:page]).limit(12)
 		else
-			@movies = Movie.order(:created_at).page(params[:page])
+			@movies = Movie.order(:created_at).page(params[:page]).limit(12)
 		end
 
 		@movie_count = Movie.count

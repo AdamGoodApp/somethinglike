@@ -13,14 +13,30 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.lazyload
-//= require jquery.infinitescroll.js
+//= require jquery.infinitescroll
 //= require_tree .
 
 $(function(){
+  
+	/*****************
+	* RANSACK SEARCH *
+	*****************/
   $("#search_form").on("keyup", function() {
 		$(this).submit();	
   });
 
+	/******************
+	* INFINITE SCROLL *
+	******************/
+	// $("#movies").infinitescroll({
+	// 	navSelector: "nav.pagination",
+ //    nextSelector: "nav.pagination a[rel=next]",
+ //    itemSelector: "#movies div.viewport"
+ //  });
+
+	/******************
+	* HOVER POSTERS   *
+	******************/
 	$("#movies .viewport").on("mouseenter", function() {
 		$(this).children('a').children('img').animate({
 			height: '380',
