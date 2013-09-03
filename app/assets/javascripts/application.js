@@ -14,10 +14,59 @@
 //= require jquery_ujs
 //= require jquery.lazyload
 //= require jquery.infinitescroll
+//= require bootstrap.min
 //= require_tree .
 
-$(function(){
-  
+
+
+
+function movieCoverHover() {
+	$("#movies .viewport").on("mouseenter", function() {
+		$(this).children('a').children('img').animate({
+			height: '380',
+			left: '0', 
+			top: '0', 
+			width: '300'
+		}, 100);
+		$(this).children('a').children('span').fadeIn(200);
+	}).on("mouseleave", function() {
+		$(this).children('a').children('img').animate({
+			height: '480',
+			left: '-20',
+			top: '-20',
+			width: '400'
+		}, 100);
+		$(this).children('a').children('span').fadeOut(200);
+	});
+};
+
+
+$(function (){
+
+	function ajaxCall(title){
+		
+	}
+
+
+	$(".modal_button").on('click', function(){
+
+		var title = $(this).attr('data-title');
+	 	var cast = $(this).attr('data-cast');
+
+
+		$('#myModal2').on('shown', function(){
+			$(".movie_title").text(title);
+		});
+
+		$('#myModal2').modal({
+		});
+
+		ajaxCall(title);
+
+	});
+
+
+
 	/*****************
 	* RANSACK SEARCH *
 	*****************/
@@ -37,23 +86,7 @@ $(function(){
 	/******************
 	* HOVER POSTERS   *
 	******************/
-	$("#movies .viewport").on("mouseenter", function() {
-		$(this).children('a').children('img').animate({
-			height: '380',
-			left: '0', 
-			top: '0', 
-			width: '300'
-		}, 100);
-		$(this).children('a').children('span').fadeIn(200);
-	}).on("mouseleave", function() {
-		$(this).children('a').children('img').animate({
-			height: '480',
-			left: '-20',
-			top: '-20',
-			width: '400'
-		}, 100);
-		$(this).children('a').children('span').fadeOut(200);
-	});
+	movieCoverHover();
 
   // $("img").lazyload();
 

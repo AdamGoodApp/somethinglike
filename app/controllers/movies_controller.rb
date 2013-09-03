@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   	if params[:q]
 			@movies = @q.result(:distinct => true).order(:poster).page(params[:page]).limit(12)
 		else
-			@movies = Movie.where("poster != ''").order("created_at DESC").page(params[:page]).limit(12)
+			@movies = Movie.where("poster != ''").order("created_at ASC").page(params[:page]).limit(12)
 		end
 
 		@movie_count = Movie.count
