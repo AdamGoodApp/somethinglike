@@ -1,5 +1,6 @@
-$("#movies").html("<%= escape_javascript(render @movies) %>")
-						.append("<%= escape_javascript(paginate @movies) %>");
+$("#movies").html("<%= escape_javascript(render @movies) %>");
+
+$('#movie_pagination').html("<%= escape_javascript(paginate @movies) %>");
 
 movieCoverHover();
 

@@ -2,11 +2,11 @@
 .viewport {
     border: 3px solid #eee;
     float: left;
-    height: 380px;
+    height: 210px;
     margin: 0 9px 9px 0;
     overflow: hidden;
     position: relative;
-    width: 300px;
+    width: 155px;
 }
 
 /* This is so that the 2nd thumbnail in each row fits snugly. You will want to add a similar
@@ -22,20 +22,20 @@
 }
 
 .viewport a img {
-    height: 480px;
+    height: 230px;
     left: -20px;
     position: relative;
     top: -20px;
-    width: 400px;
+    width: 175px;
 }
 
 /* --- Label configuration -------------------------------------------------------------- */
 .viewport a span {
     display: none;
-    font-size: 3.0em;
+    font-size: 1.5em;
     font-weight: bold;
     height: 100%;
-    padding-top: 120px;
+    padding-top: 2px;
     position: absolute;
     text-align: center;
     text-decoration: none;

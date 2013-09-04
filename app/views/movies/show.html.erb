@@ -1,1 +1,63 @@
-<h1><%= @movie.title %></h1>
+<div id="movies">
+    <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <img class="show_image" src="<%= @info.poster %>">
+      <h1><%= @info.title %></h1>
+      <p><%= @info.release_date %></p>
+      <p>Length: <%= @info.length %> mins</p>
+			<p>Rating: <%= @info.rating %></p>
+    </div>
+    <div class="span10">
+      <p><%= @info.plot %></p>
+			<p><%= @info.tagline %></p>
+			<p><%= @info.genres %></p>
+			<p><%= @info.director %></p>
+			<% if @cast == nil %>
+				<p><%= @info.cast_members %></p>
+			<% end %>
+			
+			<% if @similar != nil %>
+			<% @similar.each do |k| %>
+				<div class="viewport">
+					<%= link_to movie_path(k['id']) do %>
+					<span class="dark-background">
+					<%= k['title'] %>
+					</span>
+					<img src="http://cf2.imgobject.com/t/p/w500<%= k['poster_path'] %>">
+					<% end %>
+				</div>
+			<% end %>
+			<% end %>
+			
+			<% if @cast != nil %>
+			<% @cast.each do |k| %>
+				<div class="viewport">
+					<a>
+						<span class="dark-background">
+							<p><%= k['name'] %></p>
+							<p>Plays: <%= k['character'] %></p>
+						</span>
+						<img src="http://cf2.imgobject.com/t/p/w500<%= k['profile_path'] %>">
+					</a>
+				</div>
+			<% end %>
+			<% end %>
+			
+			<% if @backdrops != nil %>
+			<% @backdrops.each do |k| %>
+				 <img src="http://cf2.imgobject.com/t/p/w500<%= k['file_path'] %>">
+			<% end %>
+			<% end %>
+			
+			<% if @youtube != nil %>
+			<% @youtube.each do |k| %>
+				<iframe width="560" height="315" src="//www.youtube.com/embed/<%= k['source'] %>" frameborder="0" allowfullscreen></iframe>
+			<% end %>
+			<% end %>
+    </div>
+  </div>
+</div>
+
+
+

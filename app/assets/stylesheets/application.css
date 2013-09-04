@@ -30,10 +30,14 @@ h1, h2 {
 }
 
 .search {
-	padding-top: 6%;
 }
 
 #movies {
-	
+	padding-top: 1%;
+	padding-left: 4%;
+}
+
+.show_image {
+	width:100%;
 }
 

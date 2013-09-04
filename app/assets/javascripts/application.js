@@ -21,20 +21,20 @@
 
 
 function movieCoverHover() {
-	$("#movies .viewport").on("mouseenter", function() {
+	$(".viewport").on("mouseenter", function() {
 		$(this).children('a').children('img').animate({
-			height: '380',
+			height: '310',
 			left: '0', 
 			top: '0', 
-			width: '300'
+			width: '255'
 		}, 100);
 		$(this).children('a').children('span').fadeIn(200);
 	}).on("mouseleave", function() {
 		$(this).children('a').children('img').animate({
-			height: '480',
+			height: '230',
 			left: '-20',
 			top: '-20',
-			width: '400'
+			width: '175'
 		}, 100);
 		$(this).children('a').children('span').fadeOut(200);
 	});

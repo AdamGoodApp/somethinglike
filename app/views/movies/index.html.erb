@@ -7,9 +7,6 @@
           <h1>SOMETHING LIKE</h1>
           <h2><%= @movie_count %> Movies and counting</h2>
         </div>
-      </div>
-
-      <div class="span7">
         <div class="search">
         <%= search_form_for @q, :remote => true, id: :search_form, :class => "form-wrapper cf" do |f| %>
         <%= f.text_field :title_cont, :placeholder => "Title Contains" %>
@@ -24,23 +21,25 @@
         <button type="submit">Year</button>
         <% end %>
         </div>
+        <div id='movie_pagination'>
+          <%= paginate @movies %>
+        </div>
       </div>
 
+      <div class="span7">
+        <div id="movies">
+          <%= render @movies %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-  <div id="movies">
-    <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <%= paginate @movies %>
-    </div>
-    <div class="span10">
-      <%= render @movies %>
-    </div>
-  </div>
-</div>
+ 
+
+<% if params[:id] %>
+<h1><%= @info.title %></h1>
+<% end %>
 
  
 
