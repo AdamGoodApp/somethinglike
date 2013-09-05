@@ -40,8 +40,10 @@ h1, h2, p {
 }
 
 #movies {
-	padding-top: 1%;
-	padding-left: 4%;
+	padding-top: 2%;
+	padding-left: 1%;
+	background-color: black;
+
 }
 
 .show_image {
@@ -57,4 +59,27 @@ div#loading {
 	display: none;
 }
 
+.showright {
+	background-color: #6348B5;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
 
+.info {
+	padding-left: 9%;
+}
+
+.youtube {
+	padding-left: 22.5%;
+}
+
+.cast{
+	padding-left: 9%;
+
+}
+
+.similar {
+	margin-top: 25%;
+	padding-left: 9%;
+
+}
