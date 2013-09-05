@@ -19,10 +19,10 @@
         <button type="submit">Cast</button>
         <%= f.text_field :release_date_cont, :placeholder => "Release Year Contains" %>
         <button type="submit">Year</button>
-        <% end %>
-        </div>
         <div id='movie_pagination'>
           <%= paginate @movies %>
+        </div>
+        <% end %>
         </div>
       </div>
 

@@ -17,10 +17,11 @@ body {
 	background-color: #6348B5;
 }
 
-h1, h2 {
-	color: white;
+h1, h2, p {
+	color: #EAEAEA;
 	margin-top: 0px;
 }
+
 
 .welcome {
 	background-image:url('test.jpg');
@@ -29,7 +30,13 @@ h1, h2 {
 	height: 43em;
 }
 
+.welcome_text {
+	padding-top: 7%;
+	padding-left: 20%
+}
+
 .search {
+	padding-top: 9%;
 }
 
 #movies {
