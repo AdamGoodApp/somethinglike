@@ -1,0 +1,82 @@
+<div id="movies">
+  <div class="container-fluid">
+	  <div class="row-fluid">
+	    <div class="span2 ">
+	      <img class="show_image" src="<%= @info.poster %>">
+	      <h1><%= @info.title %></h1>
+	      <p><%= @info.release_date %></p>
+	      <p>Length: <%= @info.length %> mins</p>
+				<p>Rating: <%= @info.rating %></p>
+	    </div>
+
+	    <div class="span10 showright">
+	    	<div class="info">
+		      <p><%= @info.plot %></p>
+					<p><%= @info.genres %></p>
+					<p><%= @info.director %></p>
+					<% if @cast == nil %>
+						<p><%= @info.cast_members %></p>
+					<% end %>
+				</div>
+
+				<div class="youtube">
+					<% if @youtube != nil %>
+					<% @youtube.each do |k| %>
+						<iframe width="560" height="315" src="//www.youtube.com/embed/<%= k['source'] %>" frameborder="0" allowfullscreen></iframe>
+					<% end %>
+					<% end %>
+					<div class="images">
+					<a href="#openModal">Images</a>
+						<div id="openModal" class="modalDialog">
+							<div>
+								<a href="#close" title="Close" class="close">X</a>
+								<% if @backdrops != nil %>
+									<% @backdrops[0...4].collect do |k| %>
+							 			<img src="http://cf2.imgobject.com/t/p/w500<%= k['file_path'] %>">
+									<% end %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="cast">
+					<% if @cast != nil %>
+						<% @cast.each do |k| %>
+							<% if k['profile_path'] != nil %>
+								<div class="viewport">
+									<a>
+										<span class="dark-background">
+										<p><%= k['name'] %></p>
+										<p>Plays: <%= k['character'] %></p>
+										</span>
+										<img src="http://cf2.imgobject.com/t/p/w500<%= k['profile_path'] %>">
+									</a>
+								</div>
+							<% end %>
+						<% end %>
+					<% end %>
+				</div>
+				
+				
+				<div class="similar">
+					<% @similar.each do |similar| %>
+					<% if similar.poster != nil %>
+						<div class="viewport">
+							<%= link_to movie_path(similar.id), class: "load_button" do %>
+							<span class="dark-background">
+							<%= similar.title %>
+							</span>
+							<img src="<%= similar.poster %>">
+							<% end %>
+						</div>
+						<% end %>
+					<% end unless @similar.empty? %>
+				</div>
+
+	    </div>
+  </div>
+</div>
+
+
+

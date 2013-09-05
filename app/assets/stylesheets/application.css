@@ -9,5 +9,77 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= bootstrap.min
  *= require_tree .
  */
+
+body {
+	background-color: #6348B5;
+}
+
+h1, h2, p {
+	color: #EAEAEA;
+	margin-top: 0px;
+}
+
+
+.welcome {
+	background-image:url('test.jpg');
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	height: 43em;
+}
+
+.welcome_text {
+	padding-top: 7%;
+	padding-left: 20%
+}
+
+.search {
+	padding-top: 9%;
+}
+
+#movies {
+	padding-top: 2%;
+	padding-left: 1%;
+	background-color: black;
+
+}
+
+.show_image {
+	width:100%;
+}
+
+div#loading {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: url("loading.gif") no-repeat center black;
+	z-index: 100;
+	display: none;
+}
+
+.showright {
+	background-color: #6348B5;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.info {
+	padding-left: 9%;
+}
+
+.youtube {
+	padding-left: 22.5%;
+}
+
+.cast{
+	padding-left: 9%;
+
+}
+
+.similar {
+	margin-top: 25%;
+	padding-left: 9%;
+
+}

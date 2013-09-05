@@ -12,4 +12,87 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.lazyload
+//= require jquery.infinitescroll
+//= require bootstrap.min
 //= require_tree .
+
+
+
+
+function movieCoverHover() {
+	$(".viewport").on("mouseenter", function() {
+		$(this).children('a').children('img').animate({
+			height: '310',
+			left: '0', 
+			top: '0', 
+			width: '255'
+		}, 100);
+		$(this).children('a').children('span').fadeIn(200);
+	}).on("mouseleave", function() {
+		$(this).children('a').children('img').animate({
+			height: '230',
+			left: '-20',
+			top: '-20',
+			width: '175'
+		}, 100);
+		$(this).children('a').children('span').fadeOut(200);
+	});
+};
+
+
+$(function (){
+
+	function ajaxCall(title){
+		
+	}
+
+
+	$(".modal_button").on('click', function(){
+
+		var title = $(this).attr('data-title');
+	 	var cast = $(this).attr('data-cast');
+
+
+		$('#myModal2').on('shown', function(){
+			$(".movie_title").text(title);
+		});
+
+		$('#myModal2').modal({
+		});
+
+		ajaxCall(title);
+
+	});
+
+
+	$(".load_button").click(function(){
+		console.log("hello");
+		$('#loading').css("display", "block");
+	});
+
+
+	/*****************
+	* RANSACK SEARCH *
+	*****************/
+  $("#search_form").on("keyup", function() {
+		$(this).submit();	
+  });
+
+	/******************
+	* INFINITE SCROLL *
+	******************/
+	// $("#movies").infinitescroll({
+	// 	navSelector: "nav.pagination",
+ //    nextSelector: "nav.pagination a[rel=next]",
+ //    itemSelector: "#movies div.viewport"
+ //  });
+
+	/******************
+	* HOVER POSTERS   *
+	******************/
+	movieCoverHover();
+
+  // $("img").lazyload();
+
+});
