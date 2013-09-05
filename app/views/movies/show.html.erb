@@ -17,10 +17,11 @@
 				<p><%= @info.cast_members %></p>
 			<% end %>
 			
+
 			<% @similar.each do |similar| %>
 			<% if similar.poster != nil %>
 				<div class="viewport">
-					<%= link_to movie_path(similar.id) do %>
+					<%= link_to movie_path(similar.id), class: "load_button" do %>
 					<span class="dark-background">
 					<%= similar.title %>
 					</span>
@@ -31,19 +32,19 @@
 			<% end unless @similar.empty? %>
 			
 			<% if @cast != nil %>
-			<% @cast.each do |k| %>
-			<% if k['profile_path'] != nil %>
-				<div class="viewport">
-					<a>
-						<span class="dark-background">
-							<p><%= k['name'] %></p>
-							<p>Plays: <%= k['character'] %></p>
-						</span>
-						<img src="http://cf2.imgobject.com/t/p/w500<%= k['profile_path'] %>">
-					</a>
-				</div>
+				<% @cast.each do |k| %>
+					<% if k['profile_path'] != nil %>
+						<div class="viewport">
+							<a>
+								<span class="dark-background">
+								<p><%= k['name'] %></p>
+								<p>Plays: <%= k['character'] %></p>
+								</span>
+								<img src="http://cf2.imgobject.com/t/p/w500<%= k['profile_path'] %>">
+							</a>
+						</div>
+					<% end %>
 				<% end %>
-			<% end %>
 			<% end %>
 			
 			<% if @backdrops != nil %>

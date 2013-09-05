@@ -66,6 +66,11 @@ $(function (){
 	});
 
 
+	$(".load_button").click(function(){
+		console.log("hello");
+		$('#loading').css("display", "block");
+	});
+
 
 	/*****************
 	* RANSACK SEARCH *

@@ -36,7 +36,7 @@ class MoviesController < ApplicationController
     title = @info.title.gsub(/\d/, '').gsub(/\(/, '').gsub(/\)/, '')
  
     tmdb_response = Tmdb::Movie.find title
-    tmdb_id = tmdb_response.first.id
+    tmdb_id = tmdb_response.first.id if tmdb_response.first
 
     @similar = []
 
@@ -74,6 +74,8 @@ class MoviesController < ApplicationController
       @backdrops = @images['backdrops']
       @posters = @images['posters']
       @youtube = @trailers['youtube']
+
+
   
 	  end
 
