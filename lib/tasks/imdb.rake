@@ -1,4 +1,4 @@
-require 'pry'
+
 
 
 namespace :imdb do
