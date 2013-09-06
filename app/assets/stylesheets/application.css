@@ -40,14 +40,15 @@ h1, h2, p {
 }
 
 #movies {
-	padding-top: 2%;
-	padding-left: 1%;
-	background-color: black;
+	/*padding-left: 1%;*/
+	background-color: #6348B5;
 
 }
 
 .show_image {
 	width:100%;
+	margin-bottom: 18%;
+	margin-top: 8%
 }
 
 div#loading {
@@ -65,8 +66,17 @@ div#loading {
 	border-radius: 15px;
 }
 
+.showleft {
+	background-color: black;
+	margin-left: -2.7%
+}
+
 .info {
 	padding-left: 9%;
+}
+
+.infoleft {
+	padding-left: 5%;
 }
 
 .youtube {
@@ -82,4 +92,14 @@ div#loading {
 	margin-top: 25%;
 	padding-left: 9%;
 
+}
+
+.images img {
+	width: 30%;
+}
+
+.images {
+	padding-top: 8%;
+	padding-bottom: 8%;
+	padding-left: 25%;
 }

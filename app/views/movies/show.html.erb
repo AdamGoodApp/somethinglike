@@ -1,21 +1,23 @@
 <div id="movies">
   <div class="container-fluid">
 	  <div class="row-fluid">
-	    <div class="span2 ">
+	    <div class="span3 showleft">
 	      <img class="show_image" src="<%= @info.poster %>">
-	      <h1><%= @info.title %></h1>
-	      <p><%= @info.release_date %></p>
-	      <p>Length: <%= @info.length %> mins</p>
-				<p>Rating: <%= @info.rating %></p>
+	      <div class="infoleft">
+		      <h1><%= @info.title %></h1>
+		      <p><%= @info.release_date %></p>
+		      <p>Length: <%= @info.length %> mins</p>
+					<p>Rating: <%= @info.rating %></p>
+				</div>
 	    </div>
 
-	    <div class="span10 showright">
+	    <div class="span9 showright">
 	    	<div class="info">
-		      <p><%= @info.plot %></p>
-					<p><%= @info.genres %></p>
-					<p><%= @info.director %></p>
+		      <p>Plot: <%= @info.plot %></p>
+					<p>Genres: <%= @info.genres %></p>
+					<p>Director: <%= @info.director %></p>
 					<% if @cast == nil %>
-						<p><%= @info.cast_members %></p>
+						<p>Cast: <%= @info.cast_members %></p>
 					<% end %>
 				</div>
 
@@ -26,7 +28,7 @@
 					<% end %>
 					<% end %>
 					<div class="images">
-					<a href="#openModal">Images</a>
+					<a class="imagemodal" href="#openModal"><img src="http://upload.wikimedia.org/wikipedia/en/d/d6/Preview_icon.png"></a>
 						<div id="openModal" class="modalDialog">
 							<div>
 								<a href="#close" title="Close" class="close">X</a>
@@ -57,7 +59,6 @@
 						<% end %>
 					<% end %>
 				</div>
-				
 				
 				<div class="similar">
 					<% @similar.each do |similar| %>
